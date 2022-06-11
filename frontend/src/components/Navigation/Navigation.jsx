@@ -19,39 +19,25 @@ const HeaderContainer = styled.div`
   border-bottom: 1px solid lightgray;
   position: sticky;
   top: 0;
-  height: 10%;
+  height: 8vh;
+  background-color: white;
 `
 const Left = styled.div``
 const Logo = styled.h2``
 const Right = styled.div``
 
-const SidebarContainer = styled.div`
-  transform: ${(props) => props.visible && `translateX(-30%)`};
-  transition: 0.5s ease;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 90%;
-`
-
-const Header = () => {
-  const [sideBar, setSideBar] = useState(false)
+const Header = ({ onClick }) => {
   return (
     <>
-      <MainNav>
-        <HeaderContainer>
-          <IconButton onClick={() => setSideBar(!sideBar)}>
-            <MenuIcon />
-          </IconButton>
-          <Logo> Logo </Logo>
-          <IconButton>
-            <SendIcon />
-          </IconButton>
-        </HeaderContainer>
-        <SidebarContainer visible={sideBar}>
-          <Sidebar />
-        </SidebarContainer>
-      </MainNav>
+      <HeaderContainer>
+        <IconButton onClick={onClick}>
+          <MenuIcon />
+        </IconButton>
+        <Logo> Logo </Logo>
+        <IconButton>
+          <SendIcon />
+        </IconButton>
+      </HeaderContainer>
     </>
   )
 }

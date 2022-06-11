@@ -1,10 +1,17 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
+import useComponentVisible from "./UseVisibleHooks"
 export const SidebarData = [
   {
     title: "Home",
-    path: "/home",
+    path: "/",
+    icon: null,
+    cName: "nav-text",
+  },
+  {
+    title: "Content",
+    path: "/content",
     icon: null,
     cName: "nav-text",
   },
@@ -22,20 +29,20 @@ export const SidebarData = [
   },
 ]
 const SidebarWrapper = styled.ul`
-  background-color: #164846;
-  opacity: 100%;
-  width: 30%;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  width: 100%;
   text-decoration: none;
   height: 100%;
-
   li {
-    padding: 10px;
-    color: #ffffff;
-    font-weight: 900;
+    padding: 25px;
+    color: #424040;
+    font-weight: 800;
   }
   li:after {
     content: ".";
   }
+
   a {
     text-decoration: none;
   }
