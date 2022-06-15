@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import useComponentVisible from "./UseVisibleHooks"
+
 export const SidebarData = [
   {
     title: "Home",
@@ -38,6 +38,11 @@ const SidebarWrapper = styled.ul`
     padding: 25px;
     color: #424040;
     font-weight: 800;
+
+    :hover {
+      transform: scale(1.1);
+      transition: 0.1s ease-in;
+    }
   }
   li:after {
     content: ".";

@@ -17,7 +17,9 @@ const SidebarContainer = styled.div`
   transition: 0.5s ease;
   position: fixed;
   width: 30%;
+  min-width: 150px;
   height: 92vh;
+  z-index: 999;
 `
 
 const App = () => {
@@ -25,17 +27,20 @@ const App = () => {
   const isLogin = useSelector((state) => state.user.isLoggedIn)
   return (
     <Router>
-      <Navigation onClick={() => setSideBar(!sideBar)} />
-      <SidebarContainer visible={sideBar}>
-        <Sidebar />
-      </SidebarContainer>
-      <div style={{ height: "92vh" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={!isLogin ? <Login /> : <Navigate to="/" replace />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/content" element={<Content />} />
-        </Routes>
+      <div style={{ minWidth: "400px" }}>
+        <Navigation onClick={() => setSideBar(!sideBar)} />
+        <SidebarContainer visible={sideBar}>
+          <Sidebar />
+        </SidebarContainer>
+
+        <div style={{ minHeight: "92vh" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={!isLogin ? <Login /> : <Navigate to="/" replace />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/content" element={<Content />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   )

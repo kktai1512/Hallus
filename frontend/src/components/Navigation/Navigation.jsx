@@ -33,7 +33,7 @@ const Header = ({ onClick }) => {
         <IconButton onClick={onClick}>
           <MenuIcon />
         </IconButton>
-        <Logo> Logo </Logo>
+        <Logo> Hallus </Logo>
         <IconButton>
           <SendIcon />
         </IconButton>
