@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const users = {
-  user: [
+  users: [
     { username: "hel", password: "123" },
     { username: "221", password: "190i02" },
   ],
@@ -15,9 +15,7 @@ const UserSlice = createSlice({
       state.user += action.payloads
     },
     loginUser(state, action) {
-      if (action.payload in state.user) {
-        state.isLoggedIn = true
-      }
+      state.isLoggedIn = true
     },
   },
 })
