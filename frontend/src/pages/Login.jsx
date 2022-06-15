@@ -10,14 +10,14 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-  height: 100%;
+  flex: 1;
   align-items: center;
   border-bottom: 1px solid lightgray;
   background-color: lightcoral;
 `
 const FormContainer = styled.form`
   width: 75%;
-  height: 25%;
+  height: 160px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;

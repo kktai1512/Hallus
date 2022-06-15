@@ -11,6 +11,7 @@ import styled from "styled-components"
 import Home from "./pages/Home"
 import Sidebar from "./components/Navigation/Sidebar"
 import { useSelector } from "react-redux"
+import { flexbox } from "@mui/system"
 
 const SidebarContainer = styled.div`
   transform: ${(props) => !props.visible && `translateX(-100%)`};
@@ -33,7 +34,7 @@ const App = () => {
           <Sidebar />
         </SidebarContainer>
 
-        <div style={{ minHeight: "92vh" }}>
+        <div style={{ minHeight: "92vh", display: "flex", flexDirection: "column" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={!isLogin ? <Login /> : <Navigate to="/" replace />} />
